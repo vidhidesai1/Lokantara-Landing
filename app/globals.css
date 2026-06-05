@@ -1,26 +1,134 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --cream: #f2ebdc;
+  --cream-2: #ece3d0;
+  --cream-3: #e4d9c2;
+
+  --ink: #0e1e36;
+  --ink-2: #1b2c48;
+  --muted: #6b6552;
+  --soft: #5a6479;
+
+  --hair: rgba(14, 30, 54, 0.1);
+  --hair-2: rgba(14, 30, 54, 0.18);
+
+  --ochre: #c99a4a;
+  --rust: #b5573a;
+  --teal: #2f7a7a;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-cream: var(--cream);
+  --color-cream-2: var(--cream-2);
+  --color-cream-3: var(--cream-3);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-soft: var(--soft);
+  --color-hair: var(--hair);
+  --color-hair-2: var(--hair-2);
+  --color-ochre: var(--ochre);
+  --color-rust: var(--rust);
+  --color-teal: var(--teal);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+  --font-mono: var(--font-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--cream);
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(14, 30, 54, 0.07) 1px,
+    transparent 0
+  );
+  background-size: 22px 22px;
+  background-position: 0 0;
+}
+
+.font-sans {
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+.font-serif {
+  font-family: var(--font-serif), Georgia, serif;
+}
+.font-mono {
+  font-family: var(--font-mono), ui-monospace, Menlo, monospace;
+}
+
+.serif-it {
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.mono {
+  font-family: var(--font-mono), ui-monospace, Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: 32px;
+}
+
+@media (max-width: 760px) {
+  .wrap {
+    padding-inline: 20px;
+  }
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.15s, background 0.15s;
+}
+.btn-primary {
+  background: var(--ink);
+  color: var(--cream);
+  border-color: var(--ink);
+}
+.btn-primary:hover {
+  background: #16294a;
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--hair-2);
+}
+.btn-ghost:hover {
+  background: rgba(14, 30, 54, 0.04);
+}
+.btn .arr {
+  transition: transform 0.2s;
+}
+.btn:hover .arr {
+  transform: translateX(3px);
 }

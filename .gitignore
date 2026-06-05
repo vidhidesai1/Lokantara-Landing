@@ -23,6 +23,8 @@
 # misc
 .DS_Store
 *.pem
+Mission Rainbow_files/
+Mission Rainbow.html
 
 # debug
 npm-debug.log*
