@@ -5,7 +5,7 @@ const maintenanceHtml = `<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lokantara — Maintenance</title>
+<title>Lokantara</title>
 <style>
   :root {
     color-scheme: dark;
@@ -41,7 +41,7 @@ const maintenanceHtml = `<!DOCTYPE html>
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 44px;
+    margin-bottom: 20px;
     font: 600 14px/1.1 ui-monospace, SFMono-Regular, Menlo, monospace;
     letter-spacing: 0.24em;
   }
@@ -59,39 +59,20 @@ const maintenanceHtml = `<!DOCTYPE html>
     border-radius: 50%;
     background: var(--accent);
   }
-  .eyebrow {
-    display: block;
-    margin-bottom: 16px;
-    color: var(--accent);
-    font: 600 12px/1.3 ui-monospace, SFMono-Regular, Menlo, monospace;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-  }
-  h1 {
-    margin: 0;
-    font-size: clamp(38px, 8vw, 76px);
-    line-height: 0.95;
-    letter-spacing: 0;
-  }
-  p {
-    max-width: 560px;
-    margin: 24px 0 0;
+  .email {
+    display: inline-block;
     color: var(--muted);
-    font-size: clamp(17px, 2.2vw, 20px);
-    line-height: 1.6;
+    font-size: clamp(16px, 2vw, 18px);
+    line-height: 1.4;
+    text-decoration: none;
   }
-  a { color: var(--ink); text-underline-offset: 4px; }
+  .email:hover { color: var(--ink); }
 </style>
 </head>
 <body>
 <main>
   <div class="brand"><span class="mark" aria-hidden="true"></span>LOKANTARA</div>
-  <span class="eyebrow">Maintenance</span>
-  <h1>We will be back shortly.</h1>
-  <p>
-    Lokantara is temporarily offline while we make a few updates. For anything urgent,
-    contact <a href="mailto:intel@lokantaraspace.com">intel@lokantaraspace.com</a>.
-  </p>
+  <a class="email" href="mailto:intel@lokantaraspace.com">intel@lokantaraspace.com</a>
 </main>
 </body>
 </html>`;
